@@ -81,14 +81,16 @@ include "process.php";
         Admin Dashboard
     </div>
     <nav class="nav flex-column">
-        <a class="nav-link active" href="#">Dashboard</a>
-        <a class="nav-link" href="viewstudents.php">Students</a>
+    
+        <a class="nav-link active" href="viewstudents.php">Students</a>
         <a class="nav-link" href="viewstaffs.php">Staffs</a>
         <a class="nav-link" href="viewusers.php">Users</a>
-        <a class="nav-link" href="viewcourses.php">Courses</a>
+        <a class="nav-link" href="viewcourse.php">Courses</a>
         <a class="nav-link" href="viewdepartment.php">Departments</a>
-        <a class="nav-link" href="viewclass.php">Classes</a>
+        <a class="nav-link " href="viewclass.php">Classes</a>
         <a class="nav-link" href="viewclass.php">Post Announcement </a>
+        <a class="nav-link" href="login.php">Login</a>
+        <a class="nav-link" href="logout.php">Logout </a>
     </nav>
 </div>
 
@@ -110,7 +112,6 @@ include "process.php";
                         <th> Firstname</th>
                         <th> Last name</th>
                         <th> Email</th>
-                        <th>Password</th>
                         <th> Dob </th>
                         <th>Phonenumber</th>
                         <th>Department</th>
@@ -132,7 +133,6 @@ include "process.php";
                         <td><?php echo $student['first_name'] ?></td>
                         <td><?php echo $student['last_name'] ?></td>
                         <td><?php echo $student['email'] ?></td>
-                        <td><?php echo $student['password'] ?></td>
                         <td><?php echo $student['dob'] ?></td>
                         <td><?php echo $student['phonenumber'] ?></td>
                         <td><?php echo $student['department_id'] ?></td>
@@ -170,7 +170,6 @@ include "process.php";
         <label>First Name: <input type="text" name="studentFirstName"></label><br><br>
         <label>Last Name: <input type="text" name="studentLastName"></label><br><br>
         <label>Email: <input type="email" name="studentEmail"></label><br><br>
-        <label>Password: <input type="password" name="studentPassword"></label><br><br>
         <label>Date of Birth: <input type="date" name="studentDob"></label><br><br>
         <label>Phone Number: <input type="tel" name="studentPhone"></label><br><br>
 

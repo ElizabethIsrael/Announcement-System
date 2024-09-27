@@ -81,15 +81,14 @@ include "process.php";
         Admin Dashboard
     </div>
     <nav class="nav flex-column">
-        <a class="nav-link active" href="#">Dashboard</a>
         <a class="nav-link" href="viewstudents.php">Students</a>
-        <a class="nav-link" href="viewstaffs.php">Staffs</a>
+        <a class="nav-link active" href="viewstaffs.php">Staffs</a>
         <a class="nav-link" href="viewusers.php">Users</a>
         <a class="nav-link" href="viewcourse.php">Courses</a>
         <a class="nav-link" href="viewdepartment.php">Departments</a>
         <a class="nav-link" href="viewclass.php">Classes</a>
-        <a class="nav-link" href="viewclass.php">Post Announcement </a>
-        <a class="nav-link" href="viewclass.php">Classes</a>
+        <a class="nav-link" href="viewclass.php">Logout</a>
+        <a class="nav-link" href="viewstaffpost.php">View Post </a>
     </nav>
 </div>
 
@@ -113,7 +112,6 @@ include "process.php";
                         <th> Dob </th>
                         <th>Phonenumber</th>
                         <th> Email</th>
-                        <th>Password</th>
                          <th>Department</th>
                         <th>Actions</th>
                     </tr>
@@ -131,7 +129,6 @@ include "process.php";
                         <td><?php echo $staff['dob'] ;?></td>
                         <td><?php echo $staff['phonenumber'] ;?></td>
                         <td><?php echo $staff['email']; ?></td>
-                        <td><?php echo $staff['password']; ?></td>
                         <td><?php echo $staff['department_id']; ?></td>
                         
                         <td>
@@ -163,7 +160,6 @@ include "process.php";
         <label>Date of Birth: <input type="date" name="staffDob"></label><br><br>
         <label>Phone Number: <input type="tel" name="staffPhone"></label><br><br>
         <label>Email: <input type="email" name="staffEmail"></label><br><br>
-        <label>Password: <input type="password" name="staffPassword"></label><br><br>
 
         <label>Department:</label>
         <select name="staffDepartment" >

@@ -84,10 +84,10 @@ include "process.php";
         <a class="nav-link" href="viewstudents.php">Students</a>
         <a class="nav-link" href="viewstaffs.php">Staffs</a>
         <a class="nav-link" href="viewusers.php">Users</a>
-        <a class="nav-link" href="viewcourses.php">Courses</a>
-        <a class="nav-link" href="viewdepartment.php">Departments</a>
+        <a class="nav-link" href="viewcourse.php">Courses</a>
+        <a class="nav-link active" href="viewdepartment.php">Departments</a>
         <a class="nav-link" href="viewclass.php">Classes</a>
-        <a class="nav-link" href="viewclass.php">Post Announcement</a>
+        <a class="nav-link" href="viewstaffpost.php">View Post</a>
     </nav>
 </div>
 

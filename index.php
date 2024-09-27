@@ -54,10 +54,9 @@ include "process.php";
         <label>First Name: <input type="text" name="studentFirstName"></label><br><br>
         <label>Last Name: <input type="text" name="studentLastName"></label><br><br>
         <label>Email: <input type="email" name="studentEmail"></label><br><br>
-        <label>Password: <input type="password" name="studentPassword"></label><br><br>
         <label>Date of Birth: <input type="date" name="studentDob"></label><br><br>
         <label>Phone Number: <input type="tel" name="studentPhone"></label><br><br>
-
+         
         <label>Department:</label>
         <select name="studentDepartment">
             <?php foreach($query3Result as $dattta) { ?>
@@ -91,8 +90,6 @@ include "process.php";
         <label>Last Name: <input type="text" name="staffLastName"></label><br><br>
         <label>Date of Birth: <input type="date" name="staffDob"></label><br><br>
         <label>Phone Number: <input type="tel" name="staffPhone"></label><br><br>
-        <label>Email: <input type="email" name="staffEmail"></label><br><br>
-        <label>Password: <input type="password" name="staffPassword"></label><br><br>
 
         <label>Department:</label>
         <select name="staffDepartment" >

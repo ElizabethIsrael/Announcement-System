@@ -9,8 +9,8 @@ $db = "institute";
 $conn = mysqli_connect($servername,$username,$password,$db);
 
 // testing connection
-if(!$conn){
-    echo "connection  not  oky";
+if($conn){
+    //echo "connection  is oky";
 
 }
 

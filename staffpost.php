@@ -1,7 +1,5 @@
-<?php
-
+<?php 
 include "process.php";
-
 ?>
 
 <!DOCTYPE html>
@@ -49,6 +47,7 @@ include "process.php";
         .content {
             margin-left: 250px;
             padding: 20px;
+            max-width: calc(100% - 270px); /* Adjusts the width so it doesn't extend into the sidebar */
             transition: margin-left 0.3s;
         }
         .btn-custom {
@@ -68,11 +67,16 @@ include "process.php";
             }
             .content {
                 margin-left: 0;
+                max-width: 100%; /* Ensures full width when sidebar collapses */
             }
         }
         /* Longer Sidebar for Better Visibility */
         .sidebar {
             height: calc(100vh - 20px);
+        }
+        /* Ensure that the card doesn't stretch into the sidebar */
+        .card {
+            max-width: 100%; /* Prevents card from extending beyond the available content area */
         }
     </style>
 </head>
@@ -81,62 +85,58 @@ include "process.php";
 <!-- Sidebar -->
 <div class="sidebar">
     <div class="sidebar-header">
-        Admin Dashboard
+        Staff Dashboard
     </div>
     <nav class="nav flex-column">
-        
-        <a class="nav-link" href="viewstudents.php">Students</a>
-        <a class="nav-link" href="viewstaffs.php">Staffs</a>
-        <a class="nav-link active" href="viewusers.php">Users</a>
-        <a class="nav-link" href="viewcourse.php">Courses</a>
-        <a class="nav-link" href="viewdepartment.php">Departments</a>
-        <a class="nav-link" href="viewclass.php">Classes</a>
-        <a class="nav-link" href="viewstaffpost.php">View Post</a>
-        <a class="nav-link" href="logout.php">Logout </a>
+        <a class="nav-link " href="staffdashboard.php">staff profile</a>
+        <a class="nav-link active" href="staffpost.php">Post Announcement</a> 
+        <a class="nav-link " href="logout.php">Logout</a> 
     </nav>
 </div>
 
 <!-- Content -->
 <div class="content">
-    <!-- Users Section -->
-    <div class="card my-4" id="users-section">
+    <h2>Welcome, Staff</h2>
+
+    <!-- Classes Section -->
+    <div class="card my-4" id="classes-section">
         <div class="card-header">
-            Users
-            
+            Classes
+            <button class="btn btn-success float-center" data-bs-toggle="modal" data-bs-target="#addClassModal">Add Class</button>
         </div>
         <div class="card-body">
-            <table class="table table-striped">
-                <thead>
-                    <tr>
-                        <th>S/N</th>
-                        <th>Username</th>
-                        <th>Password</th>
-                        <th>Role</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- Example User Row -->
-                    <?php 
-                    $i = 1;
-                    foreach ($users as $data) { ?>
-                    <tr>
-                        <td><?php echo $i++; ?></td>
-                        <td><?php echo $data['username']; ?></td>
-                        <td><?php echo $data['password']; ?></td>
-                        <td><?php echo $data['role_id']; ?></td>
-                        <td>
-                            <button class="btn btn-warning btn-sm">Edit</button>
-                            <button class="btn btn-danger btn-sm">Delete</button>
-                        </td>
-                    </tr>
-                    <?php } ?>
-                </tbody>
-            </table>
+        <div class="container content">
+        <h3>Post Announcement</h3>
+        <form action="process.php" method="POST" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label for="announcementTitle" class="form-label">Announcement Title</label>
+                <input type="text" class="form-control" id="announcementTitle" name="announcementTitle" required>
+            </div>
+            <div class="mb-3">
+                <label for="announcementCategory" class="form-label">Category</label>
+                <select class="form-select" id="announcementCategory" name="announcementCategory" required>
+                    <option selected>Select Category</option>
+                    <?php foreach($categories as $data) { ?>
+                    <option value="<?php echo $data['category_id'];?>"><?php echo $data['category_name'];?></option>
+                  <?php } ?> 
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="attachment"  class="form-label">Upload Attachment</label>
+                <input type="file" class="form-control" id="attachment" name="attachment" required>
+            </div>
+            <button type="submit" class="btn btn-success">Post Announcement</button>
+        </form>
+    </div>
         </div>
     </div>
-</div>
 
+    
+
+        
+                           
+                       
+</div>
 
 <!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
